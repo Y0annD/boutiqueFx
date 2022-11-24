@@ -14,11 +14,11 @@
          <children>
             <AnchorPane VBox.vgrow="ALWAYS">
                <children>
-                  <MediaView fitHeight="200.0" fitWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <ProgressBar maxWidth="1.7976931348623157E308" progress="0.0" VBox.vgrow="ALWAYS" />
-            <SwingNode />
+            <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" progress="0.75" VBox.vgrow="ALWAYS" />
+            <SwingNode fx:id="swingNode" />
          </children>
       </VBox>
    </children>

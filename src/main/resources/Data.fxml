@@ -8,12 +8,12 @@
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
    <children>
-      <TableView AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="tableView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Nom" />
-          <TableColumn prefWidth="75.0" text="Description" />
-            <TableColumn prefWidth="75.0" text="Prix" />
-            <TableColumn prefWidth="75.0" text="Disponibilite" />
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Nom" />
+          <TableColumn fx:id="descriptionColumn" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Prix" />
+            <TableColumn fx:id="availabilityColumn" prefWidth="75.0" text="Disponibilite" />
         </columns>
       </TableView>
    </children>

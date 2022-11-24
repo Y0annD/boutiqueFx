@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.y0annd.boutique.app.controller.BoutiqueController">
    <children>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -17,14 +17,14 @@
                <children>
                   <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label fx:id="title" text="Label" />
+                        <Label fx:id="title" text="%application_title" VBox.vgrow="NEVER" />
                         <AnchorPane VBox.vgrow="ALWAYS">
                            <children>
                               <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0">
                                        <children>
-                                          <TilePane hgap="5.0" prefColumns="3" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <TilePane fx:id="panel" hgap="5.0" prefColumns="3" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
                                                 <fx:include source="Product.fxml" />
                                                 <fx:include source="Product.fxml" />
@@ -48,7 +48,7 @@
                <children>
                   <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <tabs>
-                      <Tab text="Détails de l'article">
+                      <Tab fx:id="tabDetail" text="Détails de l'article">
                            <content>
                               <VBox>
                               	<children>
@@ -57,34 +57,15 @@
                               </VBox>
                            </content>
                       </Tab>
-                      <Tab text="Web">
+                      <Tab fx:id="tabWeb" text="Web">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0">
+                          <AnchorPane>
                                  <children>
-                                    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <WebView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                                          <HBox spacing="5.0" VBox.vgrow="NEVER">
-                                             <children>
-                                                <Button fx:id="previousBtn" mnemonicParsing="false" text="previous" HBox.hgrow="NEVER" />
-                                                <Button fx:id="nextBtn" mnemonicParsing="false" text="Next" HBox.hgrow="NEVER" />
-                                                <TextField fx:id="urlTxt" HBox.hgrow="ALWAYS" />
-                                                <Button fx:id="goBtn" mnemonicParsing="false" text="Go" HBox.hgrow="NEVER" />
-                                                <Button fx:id="statsBtn" mnemonicParsing="false" text="Stats" HBox.hgrow="NEVER" />
-                                             </children>
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </HBox>
-                                       </children>
-                                       <padding>
-                                          <Insets left="10.0" right="10.0" top="10.0" />
-                                       </padding>
-                                    </VBox>
+                                    <fx:include source="Web.fxml" />
                                  </children></AnchorPane>
                         </content>
                       </Tab>
-                        <Tab text="Media">
+                        <Tab fx:id="tabMedia" text="Media">
                            <content>
                               <VBox>
                                  <children>
@@ -93,18 +74,18 @@
                               </VBox>
                            </content>
                         </Tab>
-                        <Tab text="Données">
+                        <Tab fx:id="tabData" text="Données">
                            <content>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
+                              <VBox>
                                  <children>
                                     <fx:include source="Data.fxml" />
                                  </children>
                               </VBox>
                            </content>
                         </Tab>
-                        <Tab text="Tâche de fond">
+                        <Tab fx:id="tabBackground" text="Tâche de fond">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <AnchorPane>
                                  <children>
                                     <fx:include source="BackgroundTask.fxml" />
                                  </children></AnchorPane>
