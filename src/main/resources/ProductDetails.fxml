@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <columnConstraints>
@@ -21,10 +21,10 @@
          </rowConstraints>
          <children>
             <TextField fx:id="txtName" GridPane.columnIndex="1" />
-            <Label fx:id="lblName" text="Name" />
-            <Label fx:id="lblDescription" text="Description" GridPane.rowIndex="1" />
+            <Label fx:id="lblName" text="%name" />
+            <Label fx:id="lblDescription" styleClass="familleCouleurVerte" text="%description" GridPane.rowIndex="1" />
             <TextField fx:id="txtDescription" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="lblPrice" text="Price" GridPane.rowIndex="2" />
+            <Label fx:id="lblPrice" text="%price" GridPane.rowIndex="2" />
             <TextField fx:id="txtPrice" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>

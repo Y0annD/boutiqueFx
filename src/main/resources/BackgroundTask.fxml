@@ -6,12 +6,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="fr.y0annd.boutique.app.controller.BackgroundTaskController">
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.y0annd.boutique.app.controller.BackgroundTaskController">
    <children>
-      <Button fx:id="btnActiver" mnemonicParsing="false" onAction="#onActivate" text="Activer" />
-      <Label fx:id="lblTache1" text="Label" />
-      <Button fx:id="btnInterromre" mnemonicParsing="false" onAction="#onCancel" text="Interrompre" />
+      <Button fx:id="btnActiver" mnemonicParsing="false" onAction="#onActivate" text="%activate" />
+      <Label fx:id="lblTache1" id="labelEntre2Bouttons" text="Label" />
+      <Button fx:id="btnInterromre" mnemonicParsing="false" onAction="#onCancel" text="%cancel" />
       <Label fx:id="lblTache2" text="Label" />
    </children>
    <padding>

@@ -5,3 +5,38 @@ Label
 	-fx-font-size: 20px;
 }
 
+TextField {
+	-fx-background-color: pink;
+	-fx-text-fill: red;
+	-fx-highlight-fill: yellow;
+}
+
+Button:hover {
+	-fx-background-color: yellow;
+}
+
+
+.vignette {
+	-fx-border-style: dashed;
+	-fx-border-radius: 20px;
+	-fx-border-color: #FF00FF;
+}
+
+.vignette:hover Label{
+	-fx-text-fill: red;
+}
+
+#labelEntre2Bouttons {
+	-fx-font-family: Broadway; 
+	-fx-font-size: 20px;
+	-fx-background-color: pink;
+}
+
+.familleCouleurVerte {
+	-fx-text-fill: #008b00;
+}
+
+.titre {
+	-fx-font-size: 30px;
+	-fx-font-family: "Comic Sans MS";
+}

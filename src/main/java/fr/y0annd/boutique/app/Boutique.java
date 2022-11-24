@@ -1,9 +1,9 @@
 package fr.y0annd.boutique.app;
 
 import java.net.URL;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
+import fr.y0annd.boutique.app.controller.BoutiqueController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,8 +22,9 @@ public class Boutique extends Application {
 			ResourceBundle i18n = ResourceBundle.getBundle("fr.y0annd.boutique.internationalisation.boutique");
 			
 			// Parsing du fichier FXML
-			Parent root = FXMLLoader.load(url, i18n);
-
+			FXMLLoader loader = new FXMLLoader(url);
+			Parent root = loader.load(url, i18n);
+//			((BoutiqueController)loader.getController()).init();
 			// La racine est placee dans la scene.
 			Scene scene = new Scene(root);
 

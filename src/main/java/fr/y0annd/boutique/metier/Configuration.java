@@ -10,7 +10,7 @@ public class Configuration {
 	
 	public static String getRepertoireRacine()
 	{
-		return getConfigurationBundle().getString("repertoireRessources");
+		return getConfigurationBundle().getString("repertoireRessources")+"/";
 	}
 	
 	public static String getRepertoireImages()
