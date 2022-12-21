@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 import fr.y0annd.boutique.app.ProductMapper;
 import fr.y0annd.boutique.app.components.ProductComponent;
 import fr.y0annd.boutique.app.components.ProductContainerComponent;
-import fr.y0annd.boutique.app.metier.Catalogue;
 import fr.y0annd.boutique.app.model.Product;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -41,7 +40,7 @@ import javafx.stage.Modality;
 
 public class BoutiqueController implements Initializable {
 	private static final int ICON_SIZE = 30;
-	
+
 	@FXML
 	private Label title;
 	@FXML
@@ -68,7 +67,6 @@ public class BoutiqueController implements Initializable {
 	private TableColumn colPrice;
 	@FXML
 	private Accordion accordion;
-
 
 	protected Dialog<ButtonType> createExceptionDialog(Throwable th) {
 		Dialog<ButtonType> dialog = new Dialog<ButtonType>();
@@ -106,7 +104,7 @@ public class BoutiqueController implements Initializable {
 				.ifPresent(response -> System.out.println("The exception was approved"));
 		return dialog;
 	}
-	
+
 	public ImageView getFolderView() {
 		ImageView folderView = new ImageView(new Image(getClass().getClassLoader().getResourceAsStream("folder.png")));
 		folderView.setPreserveRatio(true);
@@ -117,8 +115,8 @@ public class BoutiqueController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
-			
-			List<Product> products = Catalogue.load();
+
+			List<Product> products = new ArrayList<>()/* Catalogue.load() */;
 
 			ObservableList<Product> observableList = FXCollections.observableArrayList(products);
 			tableView.setItems(observableList);
@@ -126,18 +124,18 @@ public class BoutiqueController implements Initializable {
 			colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
 			colPrice.setCellValueFactory(new PropertyValueFactory<>("prix"));
 			Map<String, List<Product>> productsByCategory = new HashMap<>();
-			for(Product product: products) {
-				if(!productsByCategory.containsKey(product.getCategorie())) {
+			for (Product product : products) {
+				if (!productsByCategory.containsKey(product.getCategorie())) {
 					productsByCategory.put(product.getCategorie(), new ArrayList<>());
 				}
 				productsByCategory.get(product.getCategorie()).add(product);
-			}
-//			List<ProductComponent> components = products.stream().map(new ProductMapper()).collect(Collectors.toList());
-			TreeItem<String> root = new TreeItem<>("Catalogue",getFolderView());
+			} //
+			List<ProductComponent> components = products.stream().map(new ProductMapper()).collect(Collectors.toList());
+			TreeItem<String> root = new TreeItem<>("Catalogue", getFolderView());
 
-			for(List<Product> productList: productsByCategory.values()) {
-				TreeItem<String> category = new TreeItem<String>(productList.get(0).getCategorie(),getFolderView());
-				for(Product product: productList) {
+			for (List<Product> productList : productsByCategory.values()) {
+				TreeItem<String> category = new TreeItem<String>(productList.get(0).getCategorie(), getFolderView());
+				for (Product product : productList) {
 					ImageView itemIcon = new ImageView(new Image(product.getUrl_image()));
 					itemIcon.setPreserveRatio(true);
 					itemIcon.setFitWidth(ICON_SIZE);
@@ -149,9 +147,6 @@ public class BoutiqueController implements Initializable {
 				accordion.getPanes().add(container.getTitle());
 			}
 			treeView.setRoot(root);
-			
-//			panel.getChildren().addAll(components);
-			System.out.println(products.size());
 		} catch (IOException e) {
 			e.printStackTrace();
 			createExceptionDialog(e);

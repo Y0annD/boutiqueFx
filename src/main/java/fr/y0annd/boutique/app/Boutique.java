@@ -34,6 +34,10 @@ public class Boutique extends Application {
 			URL css = getClass().getClassLoader().getResource("application.css");
 
 			scene.getStylesheets().add(css.toExternalForm());
+
+			URL theme = getClass().getClassLoader().getResource("custom-theme.css");
+
+			scene.getStylesheets().add(theme.toExternalForm());
 			System.out.println("Add stylesheet: " + (System.currentTimeMillis() - start));
 			// On place la scène dans la fenetre.
 			primaryStage.setScene(scene);
