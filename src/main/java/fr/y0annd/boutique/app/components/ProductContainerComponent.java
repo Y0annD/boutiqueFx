@@ -13,15 +13,19 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.TilePane;
 
-public class ProductContainerComponent extends AnchorPane{
+public class ProductContainerComponent extends AnchorPane {
 	@FXML
 	private TitledPane title;
-	
+
 	@FXML
 	private TilePane tile;
 
+	public ProductContainerComponent() {
+	}
+
 	public ProductContainerComponent(List<Product> products) throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductContainerComponent.fxml"), ResourceBundle.getBundle("fr.y0annd.boutique.internationalisation.boutique"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductContainerComponent.fxml"),
+				ResourceBundle.getBundle("fr.y0annd.boutique.internationalisation.boutique"));
 		loader.setRoot(this);
 		loader.setController(this);
 		loader.load();
@@ -30,7 +34,7 @@ public class ProductContainerComponent extends AnchorPane{
 		List<ProductComponent> components = products.stream().map(new ProductMapper()).collect(Collectors.toList());
 		tile.getChildren().addAll(components);
 	}
-	
+
 	public TitledPane getTitle() {
 		return title;
 	}

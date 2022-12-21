@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DataFormat;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
@@ -55,13 +54,13 @@ public class ProductComponent extends VBox {
 		System.out.println("Drag done");
 		Dragboard clipboard = event.getDragboard();
 
-		if(clipboard.hasString()) {
+		if (clipboard.hasString()) {
 			event.acceptTransferModes(TransferMode.ANY);
 			product.setDescription(clipboard.getString());
 			description.setText(product.getDescription());
-			System.out.println("Nouvelle description: "+product.getDescription());
+			System.out.println("Nouvelle description: " + product.getDescription());
 		}
-		if(clipboard.hasFiles()) {
+		if (clipboard.hasFiles()) {
 			event.acceptTransferModes(TransferMode.ANY);
 			product.setUrl_image(clipboard.getFiles().get(0).getAbsolutePath());
 			image.setImage(new Image(product.getUrl_image()));
@@ -73,11 +72,11 @@ public class ProductComponent extends VBox {
 	public void onDragOver(DragEvent event) {
 		System.out.println("Drag entered, " + event);
 		Dragboard clipboard = event.getDragboard();
-		if(clipboard.hasString() || clipboard.hasFiles()) {
+		if (clipboard.hasString() || clipboard.hasFiles()) {
 			event.acceptTransferModes(TransferMode.ANY);
 			System.out.println("Accept content");
 		}
-		
+
 	}
 
 	public String getImage() {

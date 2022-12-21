@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
@@ -10,107 +11,116 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TreeView?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 
-<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.y0annd.boutique.app.controller.BoutiqueController">
+
+<HBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.y0annd.boutique.app.controller.BoutiqueController">
    <children>
-      <Label fx:id="title" styleClass="titre" text="%application_title" VBox.vgrow="NEVER" />
-      <SplitPane dividerPositions="0.25" VBox.vgrow="ALWAYS">
-         <items>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <TreeView fx:id="treeView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="600.0" prefWidth="600.0">
-               <children>
-                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0">
-                           <children>
-                              <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0">
-                                       <children>
-                                          <Accordion fx:id="accordion" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <panes>
+      <VBox>
+         <children>
+            <Label fx:id="title" styleClass="titre" text="%application_title" VBox.vgrow="NEVER" />
+            <SplitPane dividerPositions="0.25" VBox.vgrow="ALWAYS">
+               <items>
+                  <AnchorPane>
+                     <children>
+                        <TreeView fx:id="treeView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="600.0" prefWidth="600.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                                             <children>
+                                                <Accordion fx:id="accordion" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <panes>
                                               
                                             </panes>
-                                          </Accordion>
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding>
-                              </ScrollPane>
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                           <children>
-                              <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <tabs>
-                                  <Tab fx:id="tabDetail" text="%article_detail">
-                                       <content>
-                                          <VBox>
-                                          	<children>
-                                          		<fx:include source="ProductDetails.fxml" />
-                                          	</children>
-                                          </VBox>
-                                       </content>
-                                  </Tab>
-                                  <Tab fx:id="tabWeb" text="%web">
-                                    <content>
-                                      <AnchorPane>
-                                             <children>
-                                                <fx:include source="Web.fxml" />
-                                             </children>
-                                          </AnchorPane>
-                                    </content>
-                                  </Tab>
-                                    <Tab fx:id="tabMedia" text="%media">
-                                       <content>
-                                          <VBox>
-                                             <children>
-                                                <fx:include source="Media.fxml" />
-                                             </children>
-                                          </VBox>
-                                       </content>
-                                    </Tab>
-                                    <Tab fx:id="tabData" text="%data">
-                                       <content>
-                                          <VBox>
-                                             <children>
-                                                <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                                                  <columns>
-                                                    <TableColumn fx:id="colNom" prefWidth="75.0" text="%name" />
-                                                    <TableColumn fx:id="colDescription" prefWidth="75.0" text="%description" />
-                                                    <TableColumn fx:id="colPrice" prefWidth="75.0" text="%price" />
-                                                  </columns>
-                                                </TableView>
-                                             </children>
-                                          </VBox>
-                                       </content>
-                                    </Tab>
-                                    <Tab fx:id="tabBackground" text="Tâche de fond">
-                                      <content>
-                                        <AnchorPane>
-                                             <children>
-                                                <fx:include source="BackgroundTask.fxml" />
+                                                </Accordion>
                                              </children>
                                           </AnchorPane>
                                       </content>
-                                    </Tab>
-                                </tabs>
-                              </TabPane>
-                           </children>
-                        </AnchorPane>
-                    </items>
-                  </SplitPane>
-               </children>
-            </AnchorPane>
-         </items>
-      </SplitPane>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <tabs>
+                                        <Tab fx:id="tabDetail" text="%article_detail">
+                                             <content>
+                                                <VBox>
+                                                	<children>
+                                                		<fx:include source="ProductDetails.fxml" />
+                                                	</children>
+                                                </VBox>
+                                             </content>
+                                        </Tab>
+                                        <Tab fx:id="tabWeb" text="%web">
+                                          <content>
+                                            <AnchorPane>
+                                                   <children>
+                                                      <fx:include source="Web.fxml" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab fx:id="tabMedia" text="%media">
+                                             <content>
+                                                <VBox>
+                                                   <children>
+                                                      <fx:include source="Media.fxml" />
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab fx:id="tabData" text="%data">
+                                             <content>
+                                                <VBox>
+                                                   <children>
+                                                      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                        <columns>
+                                                          <TableColumn fx:id="colNom" prefWidth="75.0" text="%name" />
+                                                          <TableColumn fx:id="colDescription" prefWidth="75.0" text="%description" />
+                                                          <TableColumn fx:id="colPrice" prefWidth="75.0" text="%price" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab fx:id="tabBackground" text="Tâche de fond">
+                                            <content>
+                                              <AnchorPane>
+                                                   <children>
+                                                      <fx:include source="BackgroundTask.fxml" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </VBox>
    </children>
-</VBox>
+</HBox>
