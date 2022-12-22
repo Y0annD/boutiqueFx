@@ -5,6 +5,7 @@ module fr.y0annd {
 	requires javafx.graphics;
 	requires javafx.media;
 	requires javafx.swing;
+	requires transitive javafx.base;
 
 	exports fr.y0annd.boutique.app.controller;
 	exports fr.y0annd.boutique.app.components;

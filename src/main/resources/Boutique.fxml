@@ -67,7 +67,7 @@
                                           <content>
                                             <AnchorPane>
                                                    <children>
-                                                      <fx:include source="Web.fxml" />
+                                                      <fx:include source="Web.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                    </children>
                                                 </AnchorPane>
                                           </content>
@@ -90,6 +90,7 @@
                                                           <TableColumn fx:id="colNom" prefWidth="75.0" text="%name" />
                                                           <TableColumn fx:id="colDescription" prefWidth="75.0" text="%description" />
                                                           <TableColumn fx:id="colPrice" prefWidth="75.0" text="%price" />
+                                                            <TableColumn fx:id="colSells" prefWidth="75.0" text="%sells" />
                                                         </columns>
                                                       </TableView>
                                                    </children>

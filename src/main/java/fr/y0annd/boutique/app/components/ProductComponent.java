@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ResourceBundle;
 
 import fr.y0annd.boutique.app.model.Product;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -86,10 +88,10 @@ public class ProductComponent extends VBox {
 	public ProductComponent(Product p) throws IOException {
 		this();
 		product = p;
-		setTitle(p.getNom());
-		setImage(p.getUrl_image());
-		setDescription(p.getDescription());
-		setPrice(String.valueOf(p.getPrix()));
+		title.textProperty().bind(p.getNomProperty());
+		image.imageProperty().bind(p.getImageProperty());
+		description.textProperty().bind(p.getDescriptionProperty());;
+		price.textProperty().bind(p.getPrixProperty().asString());
 	}
 
 	public void setTitle(String t) {

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.media.*?>
-<?import javafx.embed.swing.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.embed.swing.SwingNode?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.y0annd.boutique.app.controller.MediaController">
    <children>
       <VBox style="-fx-background-color: #0000FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -18,7 +16,7 @@
                </children>
             </AnchorPane>
             <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" progress="0.75" VBox.vgrow="ALWAYS" />
-            <SwingNode fx:id="swingNode" />
+            <SwingNode fx:id="swingNode" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </children>

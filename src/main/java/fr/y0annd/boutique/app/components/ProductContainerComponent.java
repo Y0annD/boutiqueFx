@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 import fr.y0annd.boutique.app.ProductMapper;
 import fr.y0annd.boutique.app.model.Product;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TitledPane;
@@ -23,7 +25,7 @@ public class ProductContainerComponent extends AnchorPane {
 	public ProductContainerComponent() {
 	}
 
-	public ProductContainerComponent(List<Product> products) throws IOException {
+	public ProductContainerComponent(ObservableList<Product> products) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductContainerComponent.fxml"),
 				ResourceBundle.getBundle("fr.y0annd.boutique.internationalisation.boutique"));
 		loader.setRoot(this);
@@ -31,7 +33,7 @@ public class ProductContainerComponent extends AnchorPane {
 		loader.load();
 		setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		title.setText(products.get(0).getCategorie());
-		List<ProductComponent> components = products.stream().map(new ProductMapper()).collect(Collectors.toList());
+		ObservableList<ProductComponent> components = FXCollections.observableArrayList(products.stream().map(new ProductMapper()).collect(Collectors.toList()));
 		tile.getChildren().addAll(components);
 	}
 

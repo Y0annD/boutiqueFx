@@ -9,12 +9,12 @@
 
 <VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.y0annd.boutique.app.controller.WebController">
    <children>
-   	<WebView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-   	<HBox spacing="5.0" VBox.vgrow="NEVER">
+   	<WebView fx:id="webView" minHeight="200.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
+   	<HBox spacing="5.0" VBox.vgrow="ALWAYS">
    		<children>
    			<Button fx:id="previousBtn" mnemonicParsing="false" onAction="#onPrevious" styleClass="familleCouleurVerte" text="&lt;&lt;" HBox.hgrow="NEVER" />
    			<Button fx:id="nextBtn" mnemonicParsing="false" onAction="#onNext" styleClass="familleCouleurVerte" text="&gt;&gt;" HBox.hgrow="NEVER" />
-   			<TextField fx:id="urlTxt" HBox.hgrow="ALWAYS" />
+   			<TextField fx:id="urlTxt" text="http://www.google.com" HBox.hgrow="ALWAYS" />
    			<Button fx:id="goBtn" mnemonicParsing="false" onAction="#onGo" text="Go" HBox.hgrow="NEVER" />
    			<Button fx:id="statsBtn" mnemonicParsing="false" onAction="#onStats" text="Stats" HBox.hgrow="NEVER" />
    		</children>

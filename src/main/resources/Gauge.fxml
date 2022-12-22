@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<fx:root type="StackPane" fx:id="rootPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ProgressBar fx:id="progressBar" minHeight="25.0" minWidth="100.0" progress="0.26" styleClass="jauge" />
+      <HBox alignment="CENTER" style="-fx-background-color: transparent;">
+         <children>
+            <Label fx:id="rateLabel" ellipsisString="" style="-fx-font-weight: bold;" text="rate" textOverrun="CLIP">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="unitLabel" ellipsisString="" text="\%">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</fx:root>
