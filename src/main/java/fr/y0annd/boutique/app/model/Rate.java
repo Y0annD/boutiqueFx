@@ -28,6 +28,10 @@ public class Rate {
 		return mValue.get();
 	}
 	
+	public IntegerProperty getValueProperty() {
+		return mValue;
+	}
+	
 	public void setValue(int val) {
 		mValue.set(val);
 	}
@@ -36,6 +40,9 @@ public class Rate {
 		return mMax.get();
 	}
 	
+	public IntegerProperty getMaxProperty() {
+		return mMax;
+	}
 	public void setMax(int val) {
 		mMax.set(val);
 	}

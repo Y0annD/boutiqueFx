@@ -56,17 +56,17 @@ public class MediaController implements Initializable {
 			swingNode.setContent(panel);
 			panel.repaint();
 		});
-		Executors.newSingleThreadExecutor().execute(() -> {
-			while (true) {
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				panel.repaint();
-			}
-		});
+//		Executors.newSingleThreadExecutor().execute(() -> {
+//			while (true) {
+//				try {
+//					Thread.sleep(100);
+//				} catch (InterruptedException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+//				panel.repaint();
+//			}
+//		});
 	}
 
 }

@@ -1,32 +1,33 @@
 package fr.y0annd.boutique.app.metier;
 
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import fr.y0annd.boutique.app.model.Product;
 import fr.y0annd.boutique.metier.Configuration;
 
-
 public class Catalogue {
 
-	
-	
 	public static List<Product> load() throws IOException {
 		Configuration conf = new Configuration();
-		List<String> lines = Files.readAllLines(Path.of( conf.getFichierArticles()));
 		List<Product> products = new ArrayList<>();
-		for (int index = 1; index < lines.size(); index++) {
-			products.add(new Product(lines.get(index)));
+		Scanner sc = new Scanner(new File(conf.getFichierArticles()));
+		sc.nextLine();
+		while (sc.hasNextLine()) {
+			products.add(new Product(sc.nextLine()));
 		}
+//		List<String> lines = Files.readAllLines(Path.of( conf.getFichierArticles()));
+//		for (int index = 1; index < lines.size(); index++) {
+//			products.add(new Product(lines.get(index)));
+//		}
 		return products;
+
 	}
-	
-	
-	public static void main(String args[])
-	{
+
+	public static void main(String args[]) {
 		List<Product> catalogue;
 		try {
 			catalogue = Catalogue.load();
@@ -35,6 +36,6 @@ public class Catalogue {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 }

@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
@@ -85,11 +86,18 @@
                                              <content>
                                                 <VBox>
                                                    <children>
+                                                      <HBox>
+                                                         <children>
+                                                            <Label text="Label" />
+                                                            <ComboBox fx:id="filterCbo" prefWidth="150.0" />
+                                                         </children>
+                                                      </HBox>
                                                       <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                                         <columns>
                                                           <TableColumn fx:id="colNom" prefWidth="75.0" text="%name" />
                                                           <TableColumn fx:id="colDescription" prefWidth="75.0" text="%description" />
                                                           <TableColumn fx:id="colPrice" prefWidth="75.0" text="%price" />
+                                                            <TableColumn fx:id="colAvailable" prefWidth="75.0" text="%availability" />
                                                             <TableColumn fx:id="colSells" prefWidth="75.0" text="%sells" />
                                                         </columns>
                                                       </TableView>

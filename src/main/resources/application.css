@@ -90,7 +90,7 @@ DrawerPane {
 
 .orange-bar {
 	-fx-accent: orange;
-	-fx-text-fill: white;
+	-fx-text-fill: #F0F0F0;
 }
 
 .red-bar {

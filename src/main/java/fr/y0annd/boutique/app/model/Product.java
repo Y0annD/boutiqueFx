@@ -3,12 +3,12 @@ package fr.y0annd.boutique.app.model;
 import java.util.Random;
 
 import fr.y0annd.boutique.metier.Configuration;
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.FloatProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -26,6 +26,7 @@ public class Product {
 	private StringProperty url_details;
 	private IntegerProperty ventes_2019;
 	private IntegerProperty ventes_2020;
+	private BooleanProperty available;
 	private Rate rate;
 
 	public Product() {
@@ -37,6 +38,7 @@ public class Product {
 		url_details = new SimpleStringProperty("");
 		ventes_2019 = new SimpleIntegerProperty(0);
 		ventes_2020 = new SimpleIntegerProperty();
+		available = new SimpleBooleanProperty(true);
 		Random rdm = new Random();
 		rate = new Rate();
 		image = new SimpleObjectProperty<Image>();
@@ -93,7 +95,7 @@ public class Product {
 		this.prix.set(prix);
 	}
 
-	public DoubleProperty getPrixProperty() {
+	public DoubleProperty prixProperty() {
 		return prix;
 	}
 
@@ -171,5 +173,17 @@ public class Product {
 
 	public ObjectProperty<Image> getImageProperty() {
 		return image;
+	}
+	
+	public boolean getAvailable() {
+		return available.get();
+	}
+	
+	public void setAvailable(boolean available) {
+		this.available.set(available);
+	}
+	
+	public BooleanProperty getAvailableProperty() {
+		return available;
 	}
 }
